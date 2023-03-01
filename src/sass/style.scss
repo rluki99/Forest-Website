@@ -109,10 +109,6 @@ body {
 	}
 
 	.normal-link::before {
-		transition: transform 0.3s, width 0.3s, height 0.3s;
-	}
-
-	.normal-link::before {
 		content: '';
 		position: absolute;
 		bottom: 0;
@@ -122,6 +118,7 @@ body {
 		background-color: $green-color-hover;
 		transform: scaleX(0);
 		transform-origin: right;
+		transition: transform 0.3s, width 0.3s, height 0.3s;
 	}
 
 	.normal-link:hover::before {
@@ -252,6 +249,9 @@ body {
 	position: relative;
 	color: white;
 	z-index: 0;
+	display: flex;
+	align-items: center;
+	justify-content: center;
 
 	&__shadow {
 		position: absolute;
@@ -265,10 +265,6 @@ body {
 
 	&__heading {
 		z-index: 1;
-		position: absolute;
-		top: 50%;
-		left: 50%;
-		transform: translate(-50%, -50%);
 		text-align: center;
 		border: 2px solid $white;
 		padding: 1rem 4rem;
@@ -351,7 +347,7 @@ body {
 		.order-main {
 			background-color: $green-color;
 			box-shadow: 0px 3px 7px $green-color;
-			transition: background-color 0.3s box-shadow 0.3s;
+			transition: background-color 0.3s, box-shadow 0.3s;
 		}
 
 		.order-main:hover {
@@ -362,6 +358,119 @@ body {
 
 	.offer-card:hover {
 		scale: 1.05;
+	}
+}
+
+.offer-more {
+	.offer-description {
+		text-align: center;
+		margin-top: 2rem;
+		font-size: 1.8rem;
+	}
+
+	a {
+		text-decoration: none;
+		color: $green-color;
+		position: relative;
+		transition: color 0.3s;
+	}
+
+	a:hover {
+		color: $green-color-hover;
+	}
+
+	a:before {
+		content: '';
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		height: 3px;
+		width: 100%;
+		background-color: $green-color-hover;
+		transform: scaleX(0);
+		transform-origin: right;
+		transition: transform 0.3s, width 0.3s, height 0.3s;
+	}
+
+	a:hover::before {
+		transform: scaleX(1);
+		transform-origin: left;
+	}
+}
+
+//CONTACT
+
+.contact {
+	&__wrapper {
+		max-width: 1000px;
+		margin: 0 auto;
+		width: 100%;
+	}
+
+	&__form {
+		display: flex;
+		flex-direction: column;
+	}
+
+	&__form-box {
+		.fa-regular,
+		.fa-solid {
+			margin-right: 1rem;
+		}
+
+		label {
+			display: block;
+			margin-bottom: 0.5rem;
+			font-size: 2rem;
+		}
+
+		textarea {
+			min-width: 100%;
+			max-width: 100%;
+		}
+
+		input,
+		textarea {
+			padding: 1rem 2rem;
+			margin-bottom: 2rem;
+			width: 100%;
+			border: 1px solid $silver;
+			border-radius: 5px;
+
+			&:focus {
+				outline: none;
+				border: 1px solid $green-color-hover;
+			}
+		}
+	}
+
+	&__form-btn {
+		width: 100%;
+		max-width: 300px;
+		align-self: flex-end;
+		padding: 1rem;
+		font-size: 1.8rem;
+		border: 1px solid $green-color;
+		border-radius: 5px;
+		background-color: $green-color;
+		box-shadow: 0px 3px 7px $green-color;
+		transition: background-color 0.3s, box-shadow 0.3s;
+	}
+
+	&__form-btn:hover {
+		background-color: $green-color-hover;
+		box-shadow: 0px 3px 7px $green-color-hover;
+	}
+
+	&__map {
+		margin-top: 5rem;
+		iframe {
+			display: block;
+			margin: 0 auto;
+			width: 100%;
+			max-width: 900px;
+			min-height: 300px;
+		}
 	}
 }
 
@@ -438,6 +547,12 @@ body {
 		}
 	}
 
+	.offer-more {
+		.offer-description {
+			font-size: 2rem;
+		}
+	}
+
 	.footer {
 		&__box-info {
 			display: flex;
@@ -484,6 +599,33 @@ body {
 		&__heading {
 			font-size: 3rem;
 			padding: 2rem 6rem;
+		}
+	}
+
+	.offer-more {
+		.offer-description {
+			font-size: 2.2rem;
+		}
+	}
+
+	.contact {
+		&__form {
+			flex-wrap: wrap;
+			flex-direction: row;
+			justify-content: space-between;
+		}
+		&__form-box {
+			&:nth-child(1),
+			&:nth-child(2) {
+				width: 47.5%;
+			}
+			&:nth-child(3) {
+				width: 100%;
+			}
+		}
+
+		&__form-btn {
+			margin-left: auto;
 		}
 	}
 
@@ -552,6 +694,21 @@ body {
 		&__heading {
 			font-size: 4rem;
 			padding: 3rem 6rem;
+		}
+	}
+
+	.offer-more {
+		.offer-description {
+			margin-top: 2rem;
+			font-size: 2.4rem;
+		}
+	}
+
+	.contact {
+		&__map {
+			iframe {
+				height: 350px;
+			}
 		}
 	}
 
@@ -667,6 +824,14 @@ body {
 
 			.info-allchecked {
 				text-align: center;
+			}
+		}
+	}
+
+	.contact {
+		&__map {
+			iframe {
+				height: 400px;
 			}
 		}
 	}

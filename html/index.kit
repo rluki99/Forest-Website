@@ -10,6 +10,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;400;500;600;700;800;900&display=swap"
         rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="dist/css/hamburger.min.css">
     <link rel="stylesheet" href="dist/css/style.min.css">
     <script src="https://kit.fontawesome.com/e8e4168dbf.js" crossorigin="anonymous"></script>
@@ -51,14 +52,14 @@
 
         <section class="gap section-padding">
             <div class="gap__shadow"></div>
-            <h2 class="gap__heading">Przygoda dla całej rodziny</h2>
+            <h2 data-aos="zoom-out-down" data-aos-duration="2000" data-aos-delay="100" class="gap__heading">Przygoda dla całej rodziny</h2>
         </section>
 
         <section id="offer" class="offer section-padding">
             <div class="wrapper">
                 <h2 class="section-heading">oferta</h2>
                 <p class="section-description">Wybierz jedną z naszych wspaniałych ofert!</p>
-                <div class="offer-cards">
+                <div data-aos="fade-up" data-aos-duration="500" data-aos-delay="200" data-aos-easing="ease-in-sine" class="offer-cards">
                     <div class="offer-card">
                         <h3 class="card-heading">Demo</h3>
                         <p class="price-tag">$0</p>
@@ -94,25 +95,40 @@
                     <div class="offer-card">
                         <h3 class="card-heading">Premium</h3>
                         <p class="price-tag">$299</p>
-                        <p class="offer-info info-allchecked"><i class="fa-solid fa-check"></i><span class="included">opcja w
+                        <p class="offer-info info-allchecked"><i class="fa-solid fa-check"></i><span
+                                class="included">opcja w
                                 pakiecie</span></p>
-                        <p class="offer-info info-allchecked"><i class="fa-solid fa-check"></i><span class="included">opcja w
+                        <p class="offer-info info-allchecked"><i class="fa-solid fa-check"></i><span
+                                class="included">opcja w
                                 pakiecie</span></p>
-                        <p class="offer-info info-allchecked"><i class="fa-solid fa-check"></i><span class="included">opcja w
+                        <p class="offer-info info-allchecked"><i class="fa-solid fa-check"></i><span
+                                class="included">opcja w
                                 pakiecie</span></p>
-                        <p class="offer-info info-allchecked"><i class="fa-solid fa-check"></i><span class="included">opcja w
+                        <p class="offer-info info-allchecked"><i class="fa-solid fa-check"></i><span
+                                class="included">opcja w
                                 pakiecie</span></p>
-                        <p class="offer-info info-allchecked"><i class="fa-solid fa-check"></i><span class="included">opcja w
+                        <p class="offer-info info-allchecked"><i class="fa-solid fa-check"></i><span
+                                class="included">opcja w
                                 pakiecie</span></p>
                         <button class="order">Wybierz</button>
                     </div>
+                </div>
+                <div class="offer-more">
+                    <p class="offer-description">Kliknij <a href="./offer.html">tutaj</a> i sprawdź pozostałe oferty</p>
                 </div>
             </div>
         </section>
     </main>
 
     <!-- @include 'footer.kit'-->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
 
+            startEvent: 'DOMContentLoaded', offset: 200, once: true
+
+        });
+    </script>
     <script src="./dist/js/main.min.js"></script>
 
 </body>
