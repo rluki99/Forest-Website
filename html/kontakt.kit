@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Forest - Kontakt</title>
+        <link rel="icon" href="./favicon.ico" type="image/x-icon" />
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link
+            href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;400;500;600;700;800;900&display=swap"
+            rel="stylesheet">
+        <link rel="stylesheet" href="dist/css/hamburger.min.css">
+        <link rel="stylesheet" href="dist/css/style.min.css">
+        <script src="https://kit.fontawesome.com/e8e4168dbf.js" crossorigin="anonymous"></script>
+    </head>
+</head>
+
+<body>
+
+    <!-- @include 'nav.kit'-->
+
+    <main class="main">
+        <section id="contact" class="contact section-padding">
+            <div class="contact__wrapper">
+                <h2 class="section-heading">kontakt</h2>
+                <form class="contact__form">
+                    <div class="contact__form-box">
+                        <label for="name"><i class="fa-regular fa-user"></i>Twoje imię i nazwisko</label>
+                        <input type="text" id="name">
+                    </div>
+                    <div class="contact__form-box">
+                        <label for="mail"><i class="fa-solid fa-at"></i>Twój e-mail</label>
+                        <input type="email" id="mail">
+                    </div>
+                    <div class="contact__form-box">
+                        <label for="msg"><i class="fa-regular fa-comment"></i>Twoja wiadomość</label>
+                        <textarea name="msg" cols="30" rows="10"></textarea>
+                    </div>
+                    <button type="submit" class="contact__form-btn">Wyślij</button>
+                </form>
+                <div class="contact__map">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2559.898452497736!2d19.890660215718313!3d50.088188079426935!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47165a326d015c3b%3A0x47a12cd367a1f34e!2sRestauracja%20McDonald&#39;s!5e0!3m2!1spl!2spl!4v1677706787209!5m2!1spl!2spl"style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </div>
+        </section>
+    </main>
+    <!-- @include 'footer.kit'-->
+
+    <script src="./dist/js/main.min.js"></script>
+
+</body>
+
+</html>

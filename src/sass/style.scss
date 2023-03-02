@@ -1,4 +1,5 @@
 @use './colors' as *;
+@use './mixins' as *;
 
 *,
 *::before,
@@ -48,10 +49,19 @@ body {
 .nav {
 	display: flex;
 	align-items: center;
-	justify-content: space-around;
+	justify-content: flex-start;
+	padding-left: 2rem;
 	height: 100px;
-	position: relative;
+	position: sticky;
+	top: 0;
+	z-index: 500;
 	overflow: hidden;
+	background-color: rgba($color: $white, $alpha: 0.9);
+	transition: transform 0.4s;
+
+	&--hidden {
+		transform: translateY(-100px);
+	}
 
 	&__logo {
 		font-size: 5rem;
@@ -109,21 +119,11 @@ body {
 	}
 
 	.normal-link::before {
-		content: '';
-		position: absolute;
-		bottom: 0;
-		left: 0;
-		height: 3px;
-		width: 100%;
-		background-color: $green-color-hover;
-		transform: scaleX(0);
-		transform-origin: right;
-		transition: transform 0.3s, width 0.3s, height 0.3s;
+		@include underline;
 	}
 
 	.normal-link:hover::before {
-		transform: scaleX(1);
-		transform-origin: left;
+		@include underline-transform;
 	}
 
 	&__mobile {
@@ -212,31 +212,7 @@ body {
 
 //ABOUT-US
 .aboutus {
-	&__box {
-		display: flex;
-		flex-direction: column;
-		margin: 2rem 0;
-	}
-
-	&__img {
-		width: 100%;
-		margin-bottom: 1rem;
-	}
-
-	&__title {
-		margin-bottom: 0.5rem;
-		font-size: 2.4rem;
-	}
-
-	&__text {
-		font-size: 1.4rem;
-		line-height: 2;
-	}
-
-	&__text-a {
-		text-decoration: none;
-		color: black;
-	}
+	@include box-img-text;
 }
 
 //GAP
@@ -380,21 +356,47 @@ body {
 	}
 
 	a:before {
-		content: '';
-		position: absolute;
-		bottom: 0;
-		left: 0;
-		height: 3px;
-		width: 100%;
-		background-color: $green-color-hover;
-		transform: scaleX(0);
-		transform-origin: right;
-		transition: transform 0.3s, width 0.3s, height 0.3s;
+		@include underline;
 	}
 
 	a:hover::before {
-		transform: scaleX(1);
-		transform-origin: left;
+		@include underline-transform;
+	}
+}
+
+.offer-subweb {
+	@include box-img-text;
+
+	&__contact {
+		text-align: center;
+		&-us {
+			font-size: 2rem;
+			margin-top: 3rem;
+		}
+		&-link {
+			font-size: 2.5rem;
+			margin-top: 2rem;
+			a {
+				padding: 0.5rem;
+				text-decoration: none;
+				text-transform: uppercase;
+				color: $green-color;
+				position: relative;
+				transition: color 0.3s;
+			}
+
+			a:hover {
+				color: $green-color-hover;
+			}
+
+			a:before {
+				@include underline;
+			}
+
+			a:hover::before {
+				@include underline-transform;
+			}
+		}
 	}
 }
 
@@ -446,7 +448,7 @@ body {
 
 	&__form-btn {
 		width: 100%;
-		max-width: 300px;
+		max-width: 320px;
 		align-self: flex-end;
 		padding: 1rem;
 		font-size: 1.8rem;
@@ -539,300 +541,7 @@ body {
 	}
 }
 
-@media (min-width: 576px) {
-	.gap {
-		height: 300px;
-		&__heading {
-			font-size: 2.85rem;
-		}
-	}
-
-	.offer-more {
-		.offer-description {
-			font-size: 2rem;
-		}
-	}
-
-	.footer {
-		&__box-info {
-			display: flex;
-			flex-wrap: wrap;
-			align-items: center;
-			justify-content: center;
-
-			a {
-				padding: 5px;
-			}
-
-			.info-aboutus,
-			.info-ourcompany,
-			.info-documents {
-				width: 45%;
-			}
-
-			.info-documents {
-				margin-top: 15px;
-			}
-		}
-	}
-}
-
-@media (min-width: 768px) {
-	.aboutus {
-		&__box {
-			flex-direction: row;
-			justify-content: space-between;
-
-			&-text {
-				width: 50%;
-			}
-
-			&-img {
-				width: 45%;
-			}
-		}
-	}
-
-	.gap {
-		height: 350px;
-
-		&__heading {
-			font-size: 3rem;
-			padding: 2rem 6rem;
-		}
-	}
-
-	.offer-more {
-		.offer-description {
-			font-size: 2.2rem;
-		}
-	}
-
-	.contact {
-		&__form {
-			flex-wrap: wrap;
-			flex-direction: row;
-			justify-content: space-between;
-		}
-		&__form-box {
-			&:nth-child(1),
-			&:nth-child(2) {
-				width: 47.5%;
-			}
-			&:nth-child(3) {
-				width: 100%;
-			}
-		}
-
-		&__form-btn {
-			margin-left: auto;
-		}
-	}
-
-	.footer {
-		&__box-info {
-			flex-wrap: nowrap;
-			align-items: self-start;
-			justify-content: center;
-
-			a {
-				padding: 5px;
-			}
-
-			.info-aboutus,
-			.info-ourcompany,
-			.info-documents {
-				width: 28%;
-			}
-
-			.info-documents {
-				margin-top: 0px;
-			}
-
-			.info-ourcompany {
-				margin: 0;
-			}
-		}
-	}
-}
-
-@media (min-width: 992px) {
-	.hamburger {
-		display: none;
-	}
-
-	.nav__desktop {
-		display: block;
-	}
-
-	.section-heading {
-		font-size: 3.7rem;
-	}
-
-	.section-padding {
-		padding: 5rem 2rem;
-	}
-
-	.header {
-		background-image: url(../../dist/img/jungle_1920.jpg);
-
-		&__texts-p {
-			font-size: 5rem;
-		}
-	}
-
-	.aboutus {
-		&__title {
-			font-size: 2.6rem;
-		}
-	}
-
-	.gap {
-		background-image: url(../../dist/img/girl_1920.jpg);
-		height: 400px;
-
-		&__heading {
-			font-size: 4rem;
-			padding: 3rem 6rem;
-		}
-	}
-
-	.offer-more {
-		.offer-description {
-			margin-top: 2rem;
-			font-size: 2.4rem;
-		}
-	}
-
-	.contact {
-		&__map {
-			iframe {
-				height: 350px;
-			}
-		}
-	}
-
-	.footer {
-		&__box-logo {
-			width: 50%;
-			padding: 25px;
-		}
-
-		&__box-info {
-			width: 50%;
-			justify-content: space-around;
-			text-align: left;
-
-			a {
-				padding: 10px 0;
-			}
-
-			.info-aboutus,
-			.info-ourcompany,
-			.info-documents {
-				width: 33%;
-				margin: 1%;
-			}
-		}
-	}
-}
-
-@media (min-width: 1050px) {
-	.aboutus {
-		&__text {
-			font-size: 1.6rem;
-		}
-	}
-}
-
-@media (min-width: 1200px) {
-	.section-heading {
-		font-size: 3.9rem;
-	}
-
-	.section-padding {
-		padding: 6rem 2rem;
-	}
-
-	.nav__desktop {
-		a {
-			margin: 30px;
-		}
-		a:first-child:before {
-			width: calc(100% + 60px);
-		}
-	}
-
-	.header {
-		height: 500px;
-	}
-
-	.aboutus {
-		&__title {
-			font-size: 2.8rem;
-		}
-
-		&__text {
-			font-size: 1.8rem;
-		}
-	}
-
-	.gap__heading {
-		font-size: 5rem;
-		padding: 4rem 12rem;
-	}
-
-	.offer {
-		.section-description {
-			font-size: 1.8rem;
-		}
-
-		.offer-cards {
-			.offer-card {
-				min-width: 300px;
-				padding: 45px;
-
-				.card-heading {
-					font-size: 1.6em;
-					margin-bottom: 10px;
-				}
-
-				.price-tag {
-					margin-bottom: 15px;
-				}
-
-				.info-allchecked {
-					text-align: center;
-				}
-			}
-		}
-	}
-
-	.offer-cards {
-		.offer-card {
-			min-width: 300px;
-			padding: 45px;
-
-			.card-heading {
-				font-size: 1.6em;
-				margin-bottom: 10px;
-			}
-
-			.price-tag {
-				margin-bottom: 15px;
-			}
-
-			.info-allchecked {
-				text-align: center;
-			}
-		}
-	}
-
-	.contact {
-		&__map {
-			iframe {
-				height: 400px;
-			}
-		}
-	}
-}
+//MEDIA QUERIES
+@import './small';
+@import './medium';
+@import './large';

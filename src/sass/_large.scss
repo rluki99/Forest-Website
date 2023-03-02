@@ -1,0 +1,79 @@
+@media (min-width: 1050px) {
+	.aboutus, .offer-subweb {
+		&__text {
+			font-size: 1.6rem;
+		}
+	}
+}
+
+@media (min-width: 1200px) {
+	.section-heading {
+		font-size: 3.9rem;
+	}
+
+	.section-padding {
+		padding: 6rem 2rem;
+	}
+
+	.nav__desktop {
+		a {
+			margin: 30px;
+		}
+		a:first-child:before {
+			width: calc(100% + 60px);
+		}
+	}
+
+	.header {
+		height: 500px;
+	}
+
+	.aboutus, .offer-subweb {
+		&__title {
+			font-size: 2.8rem;
+		}
+
+		&__text {
+			font-size: 1.8rem;
+		}
+	}
+
+	.gap__heading {
+		font-size: 5rem;
+		padding: 4rem 12rem;
+	}
+
+	.offer {
+		.section-description {
+			font-size: 1.8rem;
+		}
+
+		.offer-cards {
+			.offer-card {
+				min-width: 300px;
+				padding: 45px;
+
+				.card-heading {
+					font-size: 1.6em;
+					margin-bottom: 10px;
+				}
+
+				.price-tag {
+					margin-bottom: 15px;
+				}
+
+				.info-allchecked {
+					text-align: center;
+				}
+			}
+		}
+	}
+
+	.contact {
+		&__map {
+			iframe {
+				height: 400px;
+			}
+		}
+	}
+}

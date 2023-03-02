@@ -1,0 +1,176 @@
+@media (min-width: 768px) {
+	.aboutus, .offer-subweb {
+		&__box {
+			flex-direction: row;
+			justify-content: space-between;
+            flex-wrap: wrap;
+
+			&-text {
+				width: 50%;
+			}
+
+			&-img {
+				width: 45%;
+			}
+		}
+	}
+
+	.gap {
+		height: 350px;
+
+		&__heading {
+			font-size: 3rem;
+			padding: 2rem 6rem;
+		}
+	}
+
+	.offer-more {
+		.offer-description {
+			font-size: 2.2rem;
+		}
+	}
+
+	.offer-subweb {
+		&__box {
+			&-img--right {
+				order: 2;
+			}
+			&-text--right {
+				order: 1;
+			}
+		}
+		&__contact-us {
+			margin-top: 5rem;
+		}
+    }
+
+
+
+	.contact {
+		&__form {
+			flex-wrap: wrap;
+			flex-direction: row;
+			justify-content: space-between;
+		}
+		&__form-box {
+			&:nth-child(1),
+			&:nth-child(2) {
+				width: 47.5%;
+			}
+			&:nth-child(3) {
+				width: 100%;
+			}
+		}
+
+		&__form-btn {
+			margin-left: auto;
+		}
+	}
+
+	.footer {
+		&__box-info {
+			flex-wrap: nowrap;
+			align-items: self-start;
+			justify-content: center;
+
+			a {
+				padding: 5px;
+			}
+
+			.info-aboutus,
+			.info-ourcompany,
+			.info-documents {
+				width: 28%;
+			}
+
+			.info-documents {
+				margin-top: 0px;
+			}
+
+			.info-ourcompany {
+				margin: 0;
+			}
+		}
+	}
+}
+
+@media (min-width: 992px) {
+	.hamburger {
+		display: none;
+	}
+
+	.nav__desktop {
+		display: block;
+	}
+
+	.section-heading {
+		font-size: 3.7rem;
+	}
+
+	.section-padding {
+		padding: 5rem 2rem;
+	}
+
+	.header {
+		background-image: url(../../dist/img/jungle_1920.jpg);
+
+		&__texts-p {
+			font-size: 5rem;
+		}
+	}
+
+	.aboutus, .offer-subweb {
+		&__title {
+			font-size: 2.6rem;
+		}
+	}
+
+	.gap {
+		background-image: url(../../dist/img/girl_1920.jpg);
+		height: 400px;
+
+		&__heading {
+			font-size: 4rem;
+			padding: 3rem 6rem;
+		}
+	}
+
+	.offer-more {
+		.offer-description {
+			margin-top: 2rem;
+			font-size: 2.4rem;
+		}
+	}
+
+	.contact {
+		&__map {
+			iframe {
+				height: 350px;
+			}
+		}
+	}
+
+	.footer {
+		&__box-logo {
+			width: 50%;
+			padding: 25px;
+		}
+
+		&__box-info {
+			width: 50%;
+			justify-content: space-around;
+			text-align: left;
+
+			a {
+				padding: 10px 0;
+			}
+
+			.info-aboutus,
+			.info-ourcompany,
+			.info-documents {
+				width: 33%;
+				margin: 1%;
+			}
+		}
+	}
+}

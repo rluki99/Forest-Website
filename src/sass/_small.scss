@@ -1,0 +1,55 @@
+@media (min-width: 576px) {
+	.nav {
+		justify-content: space-around;
+		margin-left: 0;
+		&__logo {
+			font-size: 5rem;
+		}
+	}
+
+	.gap {
+		height: 300px;
+		&__heading {
+			font-size: 2.85rem;
+		}
+	}
+
+	.offer-more {
+		.offer-description {
+			font-size: 2rem;
+		}
+	}
+
+	.offer-subweb {
+		&__contact-us {
+			font-size: 2.5rem;
+			margin-top: 4rem;
+		}
+		&__contact-link {
+			font-size: 3rem;
+		}
+	}
+
+	.footer {
+		&__box-info {
+			display: flex;
+			flex-wrap: wrap;
+			align-items: center;
+			justify-content: center;
+
+			a {
+				padding: 5px;
+			}
+
+			.info-aboutus,
+			.info-ourcompany,
+			.info-documents {
+				width: 45%;
+			}
+
+			.info-documents {
+				margin-top: 15px;
+			}
+		}
+	}
+}

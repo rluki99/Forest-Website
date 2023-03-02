@@ -1,0 +1,47 @@
+@use './colors' as *;
+
+@mixin underline {
+	content: '';
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	height: 3px;
+	width: 100%;
+	background-color: $green-color-hover;
+	transform: scaleX(0);
+	transform-origin: right;
+	transition: transform 0.3s, width 0.3s, height 0.3s;
+}
+
+@mixin underline-transform {
+	transform: scaleX(1);
+	transform-origin: left;
+}
+
+@mixin box-img-text {
+    &__box {
+		display: flex;
+		flex-direction: column;
+		margin: 2rem 0;
+	}
+
+	&__img {
+		width: 100%;
+		margin-bottom: 1rem;
+	}
+
+	&__title {
+		margin-bottom: 0.5rem;
+		font-size: 2.4rem;
+	}
+
+	&__text {
+		font-size: 1.4rem;
+		line-height: 2;
+	}
+
+	&__text-a {
+		text-decoration: none;
+		color: black;
+	}
+}

@@ -3,6 +3,8 @@ const menu = document.querySelector('.nav__mobile')
 const body = document.querySelector('body')
 const mobileLinks = document.querySelectorAll('.nav__mobile-link')
 const footerYear = document.querySelector('.year')
+const nav = document.querySelector('.nav')
+let lastScrollY = window.scrollY
 
 const hamburgerActive = () => {
 	navBtn.classList.toggle('is-active')
@@ -18,9 +20,20 @@ const hamburgerActive = () => {
 }
 
 const currentYear = () => {
-    const year = new Date().getFullYear()
-    footerYear.innerText = year
+	const year = new Date().getFullYear()
+	footerYear.innerText = year
 }
 
 navBtn.addEventListener('click', hamburgerActive)
 currentYear()
+
+window.addEventListener('scroll', () => {
+	if (lastScrollY < window.scrollY) {
+		nav.classList.add('nav--hidden')
+	} else {
+		nav.classList.remove('nav--hidden')
+	}
+
+	lastScrollY = window.scrollY
+})
+
