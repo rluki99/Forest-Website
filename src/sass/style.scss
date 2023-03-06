@@ -199,11 +199,12 @@ body {
 		left: 50%;
 		transform: translate(-50%, -50%);
 
-		&-h1 {
+		&-p {
 			font-weight: 100;
+			font-size: 2em;
 		}
 
-		&-p {
+		&-h1 {
 			font-size: 4rem;
 			font-weight: 500;
 		}
@@ -228,6 +229,7 @@ body {
 	display: flex;
 	align-items: center;
 	justify-content: center;
+	overflow: hidden;
 
 	&__shadow {
 		position: absolute;
