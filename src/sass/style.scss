@@ -56,7 +56,7 @@ body {
 	top: 0;
 	z-index: 500;
 	overflow: hidden;
-	background-color: rgba($color: $white, $alpha: 0.9);
+	background-color: rgba($color: $color-white, $alpha: 0.9);
 	transition: transform 0.4s;
 
 	&--hidden {
@@ -68,12 +68,12 @@ body {
 
 		&-a {
 			text-decoration: none;
-			color: $black;
+			color: $color-black;
 		}
 	}
 
 	.fa-tree {
-		color: $logo-tree;
+		color: $color-logo-tree;
 		margin-right: 10px;
 	}
 
@@ -87,13 +87,13 @@ body {
 		&-inner,
 		&-inner::before,
 		&-inner::after {
-			background-color: $black;
+			background-color: $color-black;
 			z-index: 500;
 		}
 	}
 
 	.home-link {
-		color: $white;
+		color: $color-white;
 		position: relative;
 		transition: color 0.3s;
 	}
@@ -106,12 +106,12 @@ body {
 		top: 50%;
 		left: 50%;
 		transform: translate(-50%, -50%);
-		background-color: $black;
+		background-color: $color-black;
 		z-index: -1;
 	}
 
 	.home-link:hover {
-		color: $green-color-hover;
+		color: $color-green-hover;
 	}
 
 	.normal-link {
@@ -136,7 +136,7 @@ body {
 		justify-content: center;
 		align-items: center;
 		flex-direction: column;
-		background-color: $white;
+		background-color: $color-white;
 		transform: translateX(102%);
 		transition: transform 0.3s;
 		z-index: 10;
@@ -148,7 +148,7 @@ body {
 
 		&-link {
 			text-decoration: none;
-			color: $black;
+			color: $color-black;
 			font-size: 3rem;
 			padding: 20px;
 		}
@@ -164,7 +164,7 @@ body {
 
 		&-link {
 			text-decoration: none;
-			color: $black;
+			color: $color-black;
 			padding: 10px;
 			margin: 20px;
 		}
@@ -174,7 +174,7 @@ body {
 //HEADER
 .header {
 	background-image: url(../../dist/img/jungle_640.jpg);
-	color: $white;
+	color: $color-white;
 	position: relative;
 	height: 400px;
 	width: 100%;
@@ -199,12 +199,11 @@ body {
 		left: 50%;
 		transform: translate(-50%, -50%);
 
-		&-p {
+		&-h1 {
 			font-weight: 100;
-			font-size: 2em;
 		}
 
-		&-h1 {
+		&-p {
 			font-size: 4rem;
 			font-weight: 500;
 		}
@@ -229,7 +228,6 @@ body {
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	overflow: hidden;
 
 	&__shadow {
 		position: absolute;
@@ -244,7 +242,7 @@ body {
 	&__heading {
 		z-index: 1;
 		text-align: center;
-		border: 2px solid $white;
+		border: 2px solid $color-white;
 		padding: 1rem 4rem;
 		font-weight: 500;
 		font-size: 2.7rem;
@@ -291,15 +289,15 @@ body {
 		}
 
 		.fa-check {
-			color: $green-color;
+			color: $color-green;
 		}
 
 		.fa-minus {
-			color: $silver;
+			color: $color-silver;
 		}
 
 		.not-included {
-			color: $silver;
+			color: $color-silver;
 		}
 
 		.order {
@@ -319,18 +317,18 @@ body {
 		}
 
 		.order:hover {
-			background-color: $white-hover;
+			background-color: $color-white-hover;
 		}
 
 		.order-main {
-			background-color: $green-color;
-			box-shadow: 0px 3px 7px $green-color;
+			background-color: $color-green;
+			box-shadow: 0px 3px 7px $color-green;
 			transition: background-color 0.3s, box-shadow 0.3s;
 		}
 
 		.order-main:hover {
-			background-color: $green-color-hover;
-			box-shadow: 0px 3px 7px $green-color-hover;
+			background-color: $color-green-hover;
+			box-shadow: 0px 3px 7px $color-green-hover;
 		}
 	}
 
@@ -348,13 +346,13 @@ body {
 
 	a {
 		text-decoration: none;
-		color: $green-color;
+		color: $color-green;
 		position: relative;
 		transition: color 0.3s;
 	}
 
 	a:hover {
-		color: $green-color-hover;
+		color: $color-green-hover;
 	}
 
 	a:before {
@@ -382,13 +380,13 @@ body {
 				padding: 0.5rem;
 				text-decoration: none;
 				text-transform: uppercase;
-				color: $green-color;
+				color: $color-green;
 				position: relative;
 				transition: color 0.3s;
 			}
 
 			a:hover {
-				color: $green-color-hover;
+				color: $color-green-hover;
 			}
 
 			a:before {
@@ -438,12 +436,12 @@ body {
 			padding: 1rem 2rem;
 			margin-bottom: 2rem;
 			width: 100%;
-			border: 1px solid $silver;
+			border: 1px solid $color-silver;
 			border-radius: 5px;
 
 			&:focus {
 				outline: none;
-				border: 1px solid $green-color-hover;
+				border: 1px solid $color-green-hover;
 			}
 		}
 	}
@@ -454,16 +452,17 @@ body {
 		align-self: flex-end;
 		padding: 1rem;
 		font-size: 1.8rem;
-		border: 1px solid $green-color;
+		border: 1px solid $color-green;
 		border-radius: 5px;
-		background-color: $green-color;
-		box-shadow: 0px 3px 7px $green-color;
+		background-color: $color-green;
+		cursor: pointer;
+		box-shadow: 0px 3px 7px $color-green;
 		transition: background-color 0.3s, box-shadow 0.3s;
 	}
 
 	&__form-btn:hover {
-		background-color: $green-color-hover;
-		box-shadow: 0px 3px 7px $green-color-hover;
+		background-color: $color-green-hover;
+		box-shadow: 0px 3px 7px $color-green-hover;
 	}
 
 	&__map {
@@ -484,7 +483,7 @@ body {
 }
 
 .footer {
-	background-color: $footer-bg;
+	background-color: $color-footer-bg;
 	width: 100%;
 	height: 100%;
 	overflow: hidden;
@@ -506,7 +505,7 @@ body {
 		text-align: center;
 
 		.fa-tree {
-			color: $logo-tree;
+			color: $color-logo-tree;
 			margin-right: 10px;
 		}
 	}
@@ -519,7 +518,7 @@ body {
 		a {
 			display: block;
 			text-decoration: none;
-			color: $black;
+			color: $color-black;
 			padding: 3px 0;
 		}
 
