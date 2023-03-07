@@ -85,7 +85,9 @@ window.addEventListener('resize', () => {
 })
 
 //form validation
-sendBtn.addEventListener('click', () => {
+sendBtn.addEventListener('click', e => {
+	e.preventDefault()
+
 	checkName()
 	checkMail()
 })
