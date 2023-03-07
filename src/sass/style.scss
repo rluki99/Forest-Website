@@ -522,6 +522,11 @@ body {
 			text-decoration: none;
 			color: $color-black;
 			padding: 3px 0;
+			transition: color 0.3s;
+		}
+
+		a:hover {
+			color: $color-silver;
 		}
 
 		.info-header {
