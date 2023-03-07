@@ -31,15 +31,15 @@
                 <form class="contact__form">
                     <div class="contact__form-box">
                         <label for="name"><i class="fa-regular fa-user"></i>Twoje imię i nazwisko</label>
-                        <input type="text" id="name">
+                        <input type="text" id="name" required>
                     </div>
                     <div class="contact__form-box">
                         <label for="mail"><i class="fa-solid fa-at"></i>Twój e-mail</label>
-                        <input type="email" id="mail">
+                        <input type="email" id="mail" required>
                     </div>
                     <div class="contact__form-box">
                         <label for="msg"><i class="fa-regular fa-comment"></i>Twoja wiadomość</label>
-                        <textarea name="msg" cols="30" rows="10"></textarea>
+                        <textarea id="msg" cols="30" rows="10" required></textarea>
                     </div>
                     <button type="submit" class="contact__form-btn">Wyślij</button>
                 </form>

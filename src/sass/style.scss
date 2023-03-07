@@ -403,6 +403,9 @@ body {
 }
 
 //CONTACT
+.error {
+	background-color: $color-error;
+}
 
 .contact {
 	&__wrapper {
