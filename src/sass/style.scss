@@ -40,7 +40,6 @@ body {
 }
 
 .no-scroll-mobile {
-	position: fixed;
 	overflow: hidden;
 }
 
@@ -57,10 +56,13 @@ body {
 	z-index: 500;
 	overflow: hidden;
 	background-color: rgba($color: $color-white, $alpha: 0.9);
-	transition: transform 0.4s;
+	opacity: 1;
+	visibility: visible;
+	transition: opacity 0.4s, visibility 0.4s;
 
 	&--hidden {
-		transform: translateY(-100px);
+		opacity: 0;
+		visibility: hidden;
 	}
 
 	&__logo {
@@ -127,7 +129,7 @@ body {
 	}
 
 	&__mobile {
-		position: absolute;
+		position: fixed;
 		top: 0;
 		left: 0;
 		right: 0;
@@ -138,7 +140,7 @@ body {
 		flex-direction: column;
 		background-color: $color-white;
 		transform: translateX(102%);
-		transition: transform 0.3s;
+		transition: transform 0.5s;
 		z-index: 10;
 
 		&--active {
