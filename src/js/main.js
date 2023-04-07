@@ -11,6 +11,9 @@ const sendBtn = document.querySelector('.contact__form-btn')
 let lastScrollY = window.scrollY
 let lastWidthX = window.innerWidth
 
+const scrollSpySections = document.querySelectorAll('.scroll-spy')
+const menuItems = nav.querySelectorAll('.nav__mobile a, .nav__desktop a')
+
 const hamburgerActive = () => {
 	navBtn.classList.toggle('is-active')
 	menu.classList.toggle('nav__mobile--active')
@@ -55,10 +58,53 @@ const currentYear = () => {
 	footerYear.innerText = year
 }
 
+//function for scrollspy - only on main-page used
+const handleScrollSpy = () => {
+	let currentActiveSection = null
+
+	scrollSpySections.forEach(section => {
+		if (window.scrollY + 1 >= section.offsetTop && window.scrollY + 1 <= section.offsetTop + section.offsetHeight) {
+			currentActiveSection = section
+		}
+	})
+
+	if (currentActiveSection) {
+		const activeSectionHref = `./#${currentActiveSection.id}`
+
+		menuItems.forEach(item => {
+			if (item.getAttribute('href') === activeSectionHref) {
+				item.classList.add('active-link')
+			} else {
+				item.classList.remove('active-link')
+			}
+		})
+	}
+}
+
+//function to set the active link based on the body class
+const setActiveLink = () => {
+	const bodyClass = body.getAttribute('class')
+
+	if (bodyClass === 'main-page') {
+		handleScrollSpy()
+	} else {
+		menuItems.forEach(link => {
+			link.classList.remove('active-link')
+
+			if (bodyClass === 'offer-page' && link.getAttribute('href') === './#offer') {
+				link.classList.add('active-link')
+			} else if (bodyClass === 'contact-page' && link.getAttribute('href') === './kontakt.html') {
+				link.classList.add('active-link')
+			}
+		})
+	}
+}
+
 navBtn.addEventListener('click', hamburgerActive)
 currentYear()
+setActiveLink()
 
-//collapse expand menu depending on scroll
+//collapse expand menu depending on scroll, scrollspy
 window.addEventListener('scroll', () => {
 	//first if is for iphone safari issue
 	if (lastScrollY <= 0 || window.scrollY == 0) {
@@ -70,6 +116,8 @@ window.addEventListener('scroll', () => {
 	}
 
 	lastScrollY = window.scrollY
+
+	handleScrollSpy()
 })
 
 //remove open mobile nav after dekstop breakpoint
@@ -77,7 +125,6 @@ window.addEventListener('resize', () => {
 	lastWidthX = window.innerWidth
 
 	if (lastWidthX >= 992) {
-		console.log(`${lastWidthX} Większe niż 992`)
 		navBtn.classList.remove('is-active')
 		menu.classList.remove('nav__mobile--active')
 		body.classList.remove('no-scroll-mobile')

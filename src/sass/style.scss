@@ -94,13 +94,17 @@ body {
 		}
 	}
 
-	.home-link {
-		color: $color-white;
+	&__mobile-link,
+	&__desktop-link {
 		position: relative;
 		transition: color 0.3s;
 	}
 
-	.home-link:before {
+	.active-link {
+		color: $color-white;
+	}
+
+	.active-link:before {
 		content: '';
 		position: absolute;
 		height: 100px;
@@ -112,20 +116,9 @@ body {
 		z-index: -1;
 	}
 
-	.home-link:hover {
+	&__mobile-link:hover,
+	&__desktop-link:hover {
 		color: $color-green-hover;
-	}
-
-	.normal-link {
-		position: relative;
-	}
-
-	.normal-link::before {
-		@include underline;
-	}
-
-	.normal-link:hover::before {
-		@include underline-transform;
 	}
 
 	&__mobile {
@@ -155,7 +148,7 @@ body {
 			padding: 20px;
 		}
 
-		.home-link:before {
+		.active-link:before {
 			height: 77px;
 			width: 100%;
 		}
