@@ -100,10 +100,8 @@ body {
 		transition: color 0.3s;
 	}
 
-	.active-link {
-		color: $color-white;
-	}
-
+	&__mobile-link:before,
+	&__desktop-link:before,
 	.active-link:before {
 		content: '';
 		position: absolute;
@@ -112,8 +110,15 @@ body {
 		top: 50%;
 		left: 50%;
 		transform: translate(-50%, -50%);
-		background-color: $color-black;
 		z-index: -1;
+	}
+
+	.active-link {
+		color: $color-white;
+	}
+
+	.active-link:before {
+		background-color: $color-black;
 	}
 
 	&__mobile-link:hover,
